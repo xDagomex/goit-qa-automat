@@ -1,4 +1,4 @@
-import loginPage from "./loginPage";
+import loginPage from "./pages/loginPage";
 
 describe("User can visit GoIT page", () => {
     beforeEach("Go to page", () => {
