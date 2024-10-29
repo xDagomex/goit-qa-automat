@@ -1,5 +1,0 @@
-[
-  { "access_key": "YOUR_ACCESS_KEY", "query": "London", "units": "m" },
-  { "access_key": "YOUR_ACCESS_KEY", "query": "Berlin", "units": "m" },
-  { "access_key": "YOUR_ACCESS_KEY", "query": "Paris", "units": "m" }
-]
