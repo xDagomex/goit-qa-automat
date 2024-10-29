@@ -1,0 +1,12 @@
+config:
+  target: "https://ipstack.com/?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers"
+  phases:
+  - duration: 1
+    arrivalRate: 1
+    name: Artilerry First Test
+
+scenarios:
+  - name: "Initial traffic"
+    flow::
+      get:
+        url: "{{ target}}get"
