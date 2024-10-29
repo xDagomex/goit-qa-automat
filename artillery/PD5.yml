@@ -1,12 +1,15 @@
 config:
-  target: "https://ipstack.com/?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers"
+  target: "https://httpbin.org/"
   phases:
-  - duration: 1
+    duration: 1
     arrivalRate: 1
-    name: Artilerry First Test
+    name:
+  plugins:
+    log:
+      level: error
 
 scenarios:
-  - name: "Initial traffic"
-    flow::
-      get:
-        url: "{{ target}}get"
+  name:  Test Scenario
+  flow:
+    get:
+      url: "{{ target}}get"
