@@ -1,12 +1,43 @@
 config:
-  target: "https://httpbin.org/"
+  target: "https://api.weatherstack.com"
   phases:
-    duration: 1
-    arrivalRate: 1
-    name: Test Phase
+    - duration: 60
+      arrivalRate: 5
+      name: Steady Load Phase
+
+  payload:
+    # Reads the payload from a JSON file
+    path: ".artillery/payload.json"
+    fields:
+      - access_key
+      - query
+      - units
+
+  # Adding common headers (e.g., authentication, if required)
+  headers:
+    Content-Type: "application/json"
+  
+  # Ensuring the final metrics are set for validation
+  ensure:
+    - "http.response_time.p95 < 800"   # 95th percentile response time less than 800 ms
+    - "http.response_time.mean < 500"  # Mean response time less than 500 ms
+    - "http.requests > 100"            # Ensures at least 100 requests are made
 
 scenarios:
-  name:  Getting a resource
-  flow:
-    get:
-      url: "{{ target}}get"
+  - name: Weather API Testing
+    flow:
+      # GET request to fetch weather data
+      - get:
+          url: "/current"
+          query:
+            access_key: "{{ access_key }}"
+            query: "New York"
+            units: "m"
+
+      # POST request using payload data from the JSON file
+      - post:
+          url: "/current"
+          json:
+            access_key: "{{ access_key }}"
+            query: "{{ query }}"
+            units: "{{ units }}"
