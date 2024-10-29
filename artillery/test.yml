@@ -16,18 +16,16 @@ config:
 scenarios:
   - name: Weather API Testing
     flow:
-      # GET request to fetch weather data
       - get:
           url: "/current"
           query:
-            access_key: "YOUR_ACCESS_KEY"  # Replace with your actual access key
+            access_key: "YOUR_ACCESS_KEY"
             query: "New York"
             units: "m"
 
-      # POST request with embedded payload data
       - post:
           url: "/current"
           json:
-            access_key: "YOUR_ACCESS_KEY"  # Replace with your actual access key
+            access_key: "YOUR_ACCESS_KEY" 
             query: "London"
             units: "m"
