@@ -3,13 +3,10 @@ config:
   phases:
     duration: 1
     arrivalRate: 1
-    name:
-  plugins:
-    log:
-      level: error
+    name: Test Phase
 
 scenarios:
-  name:  Test Scenario
+  name:  Getting a resource
   flow:
     get:
       url: "{{ target}}get"
