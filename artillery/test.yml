@@ -1,13 +1,13 @@
 config:
   target: "https://api.weatherstack.com"
   phases:
-    - duration: 60
-      arrivalRate: 5
+    - duration: 60   # Load test duration in seconds
+      arrivalRate: 5 # Number of users per second
       name: Steady Load Phase
 
   payload:
     # Reads the payload from a JSON file
-    path: ".artillery/payload.json"
+    path: "./payload.json"
     fields:
       - access_key
       - query
