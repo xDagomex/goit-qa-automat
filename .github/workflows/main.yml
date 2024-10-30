@@ -15,8 +15,17 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v6.7.6
-    
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
-          build: npm run build
-          start: npm start
-          browser: chrome
+          node-version: '14'  # Adjust as necessary for your project
+
+      - name: Install dependencies
+        run: npm install  # Ensure to install all dependencies before running Cypress
+
+    
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6.7.6
+        with:
+          browser: chrome  # You can specify the browser you want to use
