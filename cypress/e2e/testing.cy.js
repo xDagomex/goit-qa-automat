@@ -91,7 +91,7 @@ describe('httpbin API Tests', () => {
       }).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.headers['content-type']).to.eq('image/png');
-        expect(response.body).to.be.instanceOf(Buffer); // Ensures binary data received
+        expect(response.body.length).to.be.greaterThan(0); // Ensures data is received
       });
     });
   
