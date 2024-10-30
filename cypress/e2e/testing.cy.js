@@ -1,6 +1,6 @@
 describe('httpbin API Tests', () => {
     const apiUrl = 'https://httpbin.org';
-    const MAX_REQUEST_DURATION = 2000;
+    const maxDuration = 2000;
 
     it('GET user data', () => {
         cy.request({
@@ -99,11 +99,11 @@ describe('httpbin API Tests', () => {
         const start = new Date().getTime();
         cy.request({
             method: 'GET',
-            url: `${apiUrl}/delay/1` // 1-second delay endpoint
+            url: `${apiUrl}/delay/1`
         }).then((response) => {
             const duration = new Date().getTime() - start;
             expect(response.status).to.eq(200);
-            expect(duration).to.be.lessThan(MAX_REQUEST_DURATION);
+            expect(duration).to.be.lessThan(maxDuration);
         });
     });
 
