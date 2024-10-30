@@ -1,34 +1,89 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-Given('I am on the homepage of the online store', async function () {});
 
-Given('I am logged into my account', async function () {});
+Given('I am on the homepage of the online store', async function () {
+  // Code to navigate to the homepage of the online store
+  // e.g., await browser.url('https://example-store.com');
+});
 
-When('I search for {string}', async function (product) {});
+Given('I am logged into my account', async function () {
+  // Code to log in to the account
+  // e.g., await login(username, password);
+});
 
-Then('I should see a list of products related to {string}', async function (product) {});
+When('I search for {string}', async function (product) {
+  // Code to enter the product in the search bar and submit
+  // e.g., await searchForProduct(product);
+});
 
-When('I select the first product in the search results', async function () {});
+Then('I should see a list of products related to {string}', async function (product) {
+  // Code to verify that search results are displayed
+  // e.g., const results = await getSearchResults();
+  // expect(results).toContain(product);
+});
 
-When('I view the product details', async function () {});
+When('I select the first product in the search results', async function () {
+  // Code to select the first product from search results
+  // e.g., await selectFirstSearchResult();
+});
 
-Then('the product page should display {string} as the product name', async function (productName) {});
+When('I view the product details', async function () {
+  // Code to navigate to the product details page
+  // e.g., await viewProductDetails();
+});
 
-Then('the product should have a price displayed', async function () {});
+Then('the product page should display {string} as the product name', async function (productName) {
+  // Code to verify the product name on the details page
+  // e.g., const name = await getProductName();
+  // expect(name).toEqual(productName);
+});
 
-When('I add the product to my cart', async function () {});
+Then('the product should have a price displayed', async function () {
+  // Code to check if the product price is displayed
+  // e.g., const price = await getProductPrice();
+  // expect(price).not.toBeNull();
+});
 
-When('I proceed to checkout', async function () {});
+When('I add the product to my cart', async function () {
+  // Code to add the product to the cart
+  // e.g., await addToCart();
+});
 
-Then('I should see the product in my cart summary', async function () {});
+When('I proceed to checkout', async function () {
+  // Code to proceed to the checkout page
+  // e.g., await proceedToCheckout();
+});
 
-When('I enter my shipping details', async function () {});
+Then('I should see the product in my cart summary', async function () {
+  // Code to verify the product in the cart summary
+  // e.g., const cartItems = await getCartItems();
+  // expect(cartItems).toContain("wireless headphones");
+});
 
-When('I select my preferred payment method', async function () {});
+When('I enter my shipping details', async function () {
+  // Code to enter shipping details
+  // e.g., await enterShippingDetails(address);
+});
 
-When('I confirm the purchase', async function () {});
+When('I select my preferred payment method', async function () {
+  // Code to select payment method
+  // e.g., await selectPaymentMethod('credit card');
+});
 
-Then('I should see a confirmation message with the order number', async function () {});
+When('I confirm the purchase', async function () {
+  // Code to confirm purchase
+  // e.g., await confirmPurchase();
+});
 
-Then('I should receive an email confirmation for the purchase', async function () {});
+Then('I should see a confirmation message with the order number', async function () {
+  // Code to verify the confirmation message and order number
+  // e.g., const confirmation = await getConfirmationMessage();
+  // expect(confirmation).toContain('Order number');
+});
+
+Then('I should receive an email confirmation for the purchase', async function () {
+  // Code to check for email confirmation (this may require integration with an email service)
+  // e.g., const email = await checkEmailForConfirmation();
+  // expect(email).toContain('Your order has been confirmed');
+});
 
