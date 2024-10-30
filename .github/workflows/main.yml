@@ -16,13 +16,6 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v6.7.6
     
-
-      - name: Install dependencies
-        run: npm install
-
-      # Ensure no build step is here
-      # - name: Build app
-      #   run: npm run build
-
-      - name: Run Cypress tests
-        run: npx cypress run
+        with:
+          build: npm run build
+          start: npm start
