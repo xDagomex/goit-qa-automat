@@ -1,6 +1,6 @@
 describe('httpbin API Tests', () => {
     const BASE_URL = 'https://httpbin.org';
-    const MAX_REQUEST_DURATION = 2000; // Maximum duration in ms
+    const MAX_REQUEST_DURATION = 2000;
 
     it('GET person', () => {
         cy.request({
